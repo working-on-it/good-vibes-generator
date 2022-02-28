@@ -227,7 +227,6 @@ export class CosmosDB {
                     "is a national treasure,",
                     "gets the party hopping,",
                     "is the next big thing,",
-                    "gets the part hopping,",
                     "is the next big thing,",
                     "roars like a lion,",
                     "is a rainbow factory,",
