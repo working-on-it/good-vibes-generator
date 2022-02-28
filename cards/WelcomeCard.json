@@ -1,0 +1,21 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.4",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Hello and welcome",
+            "size": "ExtraLarge",
+            "isSubtle": true,
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "I'm here to send you **Good Vibes** from time to time. If you need **Good Vibes** at any time, just talk to me.",
+            "size": "Medium",
+            "isSubtle": true,
+            "wrap": true
+        }
+    ]
+}
