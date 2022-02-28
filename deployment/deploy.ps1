@@ -87,9 +87,6 @@ if (!$?) {
 }
 Write-Host "Azure resources deployed successfully" -ForegroundColor Green
 
-Write-Host "Waiting for 60 seconds post Azure resource deployment..."
-Start-Sleep -Seconds 60
-
 # Deploy 'zip' in to Function App
 # Grant current user data access to storage account
 Write-Host "Ensuring current user has Storage Blob Data Contributor permissions to storage account $StorageAccountName..."
@@ -102,6 +99,8 @@ if ($roleAssignments.Count -eq 0) {
         --assignee $me.objectId `
         --role $StorageAccountRole `
         --scope $StorageAccountScope
+    Write-Host "Waiting for a minute for permissions to take effect..."
+    Start-Sleep -Seconds 60
 }
 Write-Host "Current user has Storage Blob Data Contributor permissions to storage account $StorageAccountName" -ForegroundColor Green
 
