@@ -26,16 +26,3 @@ jobs:
         run: |
           npm ci
           npm run build
-
-      - name: Zip-up function app package
-        run: |
-          zip -r ./deployment/app.zip *
-
-      - name: Zip-up build artifact
-        run: zip -r build.zip ./deployment/ ./README.md
-
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: build
-          path: build.zip
