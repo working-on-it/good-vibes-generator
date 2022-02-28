@@ -1,0 +1,41 @@
+name: Check PR
+
+on:
+  pull_request:
+    branches:
+      - main
+
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: 14
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Clean install dependencies and build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Zip-up function app package
+        run: |
+          zip -r ./deployment/app.zip *
+
+      - name: Zip-up build artifact
+        run: zip -r build.zip ./deployment/ ./README.md
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: build.zip
