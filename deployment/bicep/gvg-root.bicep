@@ -388,14 +388,3 @@ resource functionApp 'Microsoft.Web/sites@2021-03-01' = {
     }
   }
 }
-
-// TODO
-// * Upload packaged, compiled code as zip and put in Blob storage...
-// Then set app setting WEBSITE_RUN_FROM_PACKAGE to Blob of zip file
-
-// https://docs.microsoft.com/en-us/azure/azure-functions/functions-deployment-technologies
-
-// * Cosmos IP ACL?
-// * KV IP ACL?
-// * Disable public access to storage? Does this break functions?
-// * Download latest version zip from https://github.com/leeford/team-request-app/releases/latest/download/team-request-app-v0.1.1.zip
