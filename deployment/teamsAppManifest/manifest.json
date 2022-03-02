@@ -1,0 +1,40 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.12/MicrosoftTeams.schema.json",
+    "version": "1.0.0",
+    "manifestVersion": "1.12",
+    "id": "2a334074-2aac-4554-bea1-da5bc2a9645c",
+    "packageName": "com.github.working-on-it.goodvibes",
+    "name": {
+        "short": "Good Vibes",
+        "full": "Good Vibes"
+    },
+    "developer": {
+        "name": "Working-on-it",
+        "mpnId": "",
+        "websiteUrl": "https://github.com/working-on-it",
+        "privacyUrl": "https://github.com/working-on-it",
+        "termsOfUseUrl": "https://github.com/working-on-it"
+    },
+    "description": {
+        "short": "Get some Good Vibes from time to time",
+        "full": "Get some Good Vibes from time to time. Just talk to me."
+    },
+    "icons": {
+        "outline": "outline.png",
+        "color": "color.png"
+    },
+    "accentColor": "#7189E7",
+    "bots": [
+        {
+            "botId": "<botIdHere>",
+            "scopes": [
+                "personal"
+            ],
+            "isNotificationOnly": false,
+            "supportsCalling": false,
+            "supportsVideo": false,
+            "supportsFiles": false
+        }
+    ],
+    "validDomains": []
+}
