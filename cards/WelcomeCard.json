@@ -5,17 +5,27 @@
     "body": [
         {
             "type": "TextBlock",
-            "text": "Hello and welcome",
+            "text": "Hello and welcome 👋",
             "size": "ExtraLarge",
             "isSubtle": true,
             "wrap": true
         },
         {
             "type": "TextBlock",
-            "text": "I'm here to send you **Good Vibes** from time to time. If you need **Good Vibes** at any time, just talk to me.",
+            "text": "I'm the Good Vibes bot and here to send you **Good Vibes** from time to time. If you need **Good Vibes** at any time, just talk to me.",
             "size": "Medium",
             "isSubtle": true,
             "wrap": true
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.OpenUrl",
+                    "title": "powered by working-on-it",
+                    "url": "https://github.com/working-on-it"
+                }
+            ]
         }
     ]
 }

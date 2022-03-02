@@ -139,4 +139,4 @@ if (!$?) {
 }
 Write-Host "Deployed function app successfully" -ForegroundColor Green
 
-Write-Host "DEPLOYMENT COMPLETED SUCCESSFULLY!" -ForegroundColor Green
+Write-Host "DEPLOYMENT COMPLETED SUCCESSFULLY! 💖" -ForegroundColor Green
