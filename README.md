@@ -2,6 +2,8 @@
 
 //TODO insert image from Teams conversation
 
+![Good Vibes generator image](docs/media/GoodvibesReadMe.png)
+
 ## idea
 
 We all deserve some good vibes these days! get your good vibes generator today!It will proactively send good vibes as an Adaptive card to a Teams conversation. You need more good vibes? Just ask the bot anything, it will reply with more good vibes!
