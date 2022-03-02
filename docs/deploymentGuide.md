@@ -33,3 +33,7 @@ To add Good Vibes to Teams,
 * Select the **good-vibes-bot**
 * Select **Channels**
 * Select the **Open in Teams** link.
+
+## Change good vibes
+
+If you want to change some phrases, remove some or add new one, open the file and locate the `defaultConfiguration`.  You will find 4 arrays that hold all phrases that make the good vibes. Feel fre to share your additions with us 💖.
