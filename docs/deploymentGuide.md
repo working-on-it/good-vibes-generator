@@ -37,4 +37,4 @@ To add Good Vibes to Teams,
 
 If you want to change some phrases, remove some or add new one, this can be done in the `config` container in Cosmos in Item **0**.  You will find 4 arrays that hold all phrases that make the good vibes. Feel free to share your additions with us 💖.
 
-![image](https://user-images.githubusercontent.com/472320/156410072-feaab468-887c-490c-af89-433d31861448.png)
+![Cosmos DB container](media/CosmosDB-container.png)
