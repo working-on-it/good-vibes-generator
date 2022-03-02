@@ -9,7 +9,7 @@ It's a good idea to first familiarize yourself with the resources:
 ![Good Vibes Generator overview](media/overview.drawio.png)
 
 * We chose cosmos DB to store the data, because its fast, cheap, server-less, schema-less and works well with storing JSON documents (e.g. bot conversations)
-* At the very heart of the solution, you will find the good-vibes function app, which is the brain of the Good Vibes Generator. It contains 7 different functions which orchestrate the conversation with the bot and send messages to the user as Adaptive Cards
+* At the very heart of the solution, you will find the Good Vibes function app, which is the brain of the Good Vibes generator. It contains 7 different functions which orchestrate the conversation with the bot and send messages to the user as Adaptive Cards
 * We use [Azure Managed Identities](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) to handle authentication which means that no app registration in Azure Active Directory is necessary
 * Users interact with the bot in a chat in Microsoft Teams
 
@@ -23,7 +23,8 @@ It's a good idea to first familiarize yourself with the resources:
    * `SubscriptionId` - Your Azure subscription ID (you can either obtain this from the [Azure portal](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) or with `az account show --output table`)
    * `AzureResourcePrefix` - The prefix that will be used in-front of your azure resources e.g. "gvg123"
    * (Optional) `ResourceGroupName` - The name of the resource group that will be used/created within the subscription. If not specified, **GoodVibesGenerator** will be used
-The script will now deploy all resource in your tenant. You can check in the Azure portal after you see the **Deployment completed** message.
+
+The script will now deploy all resources in your tenant. You can check in the Azure portal after you see the **Deployment completed** message.
 
 To add Good Vibes to Teams,
 
