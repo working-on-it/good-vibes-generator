@@ -10,16 +10,13 @@
             "isSubtle": true,
             "wrap": true
         },
-                {
-            "type": "ActionSet",
-            "actions": [
-                {
-                    "type": "Action.OpenUrl",
-                    "title": "powered by working-on-it",
-                    "url": "https://github.com/working-on-it"
-                }
-            ]
+        {
+            "type": "TextBlock",
+            "size": "default",
+            "isSubtle": true,
+            "text": "[made with 💖 by working-on-it](https://github.com/working-on-it)",
+            "wrap": true,
+            "maxLines": 0
         }
-
     ]
 }
