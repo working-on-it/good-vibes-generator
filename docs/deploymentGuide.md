@@ -37,4 +37,10 @@ To add Good Vibes to Teams,
 
 If you want to change some phrases, remove some or add new one, this can be done in the `config` container in Cosmos in Item **0**.  You will find 4 arrays that hold all phrases that make the good vibes. Feel free to share your additions with us 💖.
 
+> The general construct of a Good Vibe is made up of 4 phrases put together. This roughly equates to:
+> Phrase 1 - Greeting e.g. "Hey!" or "Listen Up:"
+> Phrase 2 - Address a personal trait or object e.g. "your hair" or "your personality"
+> Phrase 3 - Compliment e.g. "is awesome,", "absolutely rules the world,". Typically this phrase ends with a comma to help the vibe flow better
+> Phrase 4 - End the vibe e.g. "and that's a fact." or "for reals."
+
 ![Cosmos DB container](media/CosmosDB-container.png)
