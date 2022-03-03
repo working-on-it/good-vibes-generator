@@ -16,7 +16,7 @@ It's a good idea to first familiarize yourself with the resources:
 ## Deploying
 
 1. Open [Azure cloud shell](https://shell.azure.com). If prompted, choose "PowerShell" shell type.
-2. Run `wget https://github.com/working-on-it/good-vibes-generator/releases/latest/download/good-vibes-generator.zip && unzip good-vibes-generator -d good-vibes-generator && cd good-vibes-generator/deployment`
+2. Run `wget -O good-vibes-generator.zip https://github.com/working-on-it/good-vibes-generator/releases/latest/download/good-vibes-generator.zip && unzip good-vibes-generator -d good-vibes-generator && cd good-vibes-generator/deployment`
 3. Run `./deploy.ps1`
 4. The script will prompt you to provide
    * `Location` - this is the Azure region that you want to use. If you need to get an overview about the available regions, type `az account list-locations -o table`
