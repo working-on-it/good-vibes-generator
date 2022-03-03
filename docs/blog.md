@@ -7,6 +7,7 @@
 We want good vibes. World is a tough place to be and we all can use some positive affirmations and a little pep talk. Wouldn't it be awesome if these get straight into Microsoft Teams?
 
 ![good vibes chat](media/ExampleTeamsConversation.png)
+
 So what we need is a nice pile of messages to send, but that would get pretty boring very soon if there is not a lot of variety. So we decided to split our messages into four pieces:
 
 > The general construct of a Good Vibe is made up of 4 phrases put together. This roughly equates to:
@@ -15,12 +16,13 @@ So what we need is a nice pile of messages to send, but that would get pretty bo
 > * Phrase 2 - Address a personal trait or object e.g. "your hair" or "your personality"
 > * Phrase 3 - Compliment e.g. "is awesome,", "absolutely rules the world,". Typically this phrase ends with a comma to help the vibe flow better
 > * Phrase 4 - End the vibe e.g. "and that's a fact." or "for reals."
+and then create a good vibe by randomly stitching these parts together. This means, that we can have a way bigger amount of unique messages.
 
-## let's build in in Azure
+## Let's build it in Azure
 
-### first things first: authentication
+### First things first: authentication
 
-We love Azure Managed Identities ❤. They are the state-of-the-art-way to handle authentication for Azure resources. Managed Identities give your app an identity, which means that you don't need to register an application in Azure Active Directory and then have hassle with managing/rotating a secret or signing certificates. Managed Identities come in two flavors:
+We love Azure Managed Identities ❤. They are the state-of-the-art way to handle authentication for Azure resources. Managed Identities give your app an identity, which means that you don't need to register an application in Azure Active Directory and then have hassle with managing/rotating a secret or signing certificates. Managed Identities come in two flavors:
 
 - system-assigned Managed Identity, which is tied to the lifecycle of another Azure resource and can't be used for any other resource
 - user-assigned Managed Identity, which is an Azure resource just on its own and can be used with several other resources.
