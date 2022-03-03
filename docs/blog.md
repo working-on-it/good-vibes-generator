@@ -2,9 +2,9 @@
 
 ![overview](media/overview.drawio.png)
 
-## idea
+## Idea
 
-We want good vibes. World is a tough place to be and we all can use some positive affirmations and a little pep talk. Wouldn't it be awesome if these get straight into Microsoft Teams?
+We want good vibes. The world is a tough place to be and we all can use some positive affirmations and a little pep talk. Wouldn't it be awesome if these get straight into Microsoft Teams?
 
 ![good vibes chat](media/ExampleTeamsConversation.png)
 
@@ -16,6 +16,7 @@ So what we need is a nice pile of messages to send, but that would get pretty bo
 > * Phrase 2 - Address a personal trait or object e.g. "your hair" or "your personality"
 > * Phrase 3 - Compliment e.g. "is awesome,", "absolutely rules the world,". Typically this phrase ends with a comma to help the vibe flow better
 > * Phrase 4 - End the vibe e.g. "and that's a fact." or "for reals."
+
 and then create a good vibe by randomly stitching these parts together. This means, that we can have a way bigger amount of unique messages.
 
 ## Let's build it in Azure
@@ -24,8 +25,8 @@ and then create a good vibe by randomly stitching these parts together. This mea
 
 We love Azure Managed Identities ❤. They are the state-of-the-art way to handle authentication for Azure resources. Managed Identities give your app an identity, which means that you don't need to register an application in Azure Active Directory and then have hassle with managing/rotating a secret or signing certificates. Managed Identities come in two flavors:
 
-- system-assigned Managed Identity, which is tied to the lifecycle of another Azure resource and can't be used for any other resource
-- user-assigned Managed Identity, which is an Azure resource just on its own and can be used with several other resources.
+* system-assigned Managed Identity, which is tied to the lifecycle of another Azure resource and can't be used for any other resource
+* user-assigned Managed Identity, which is an Azure resource just on its own and can be used with several other resources.
 
 In our solution, we unfortunately need both, as there is some inconsistency which resources support which Managed Identity.
 
@@ -37,14 +38,18 @@ Using Cosmos DB to store all phrases so that they can be picked up by the Azure 
 
 ### Azure Functions
 
+### Storage Account
+
+In order to publish the (TypeScript) function app releases, we create a container in a storage account.
+
 ### Bot
 
 ### Adaptive Cards
 
 We created two Adaptive Cards:
 
-- **WelcomeCard**, which is sent on first run to greet the user and introduce what the Good Vibes generator does
-- **GoodVibeCard**, which sends the good vibes
+* **WelcomeCard**, which is sent on first run to greet the user and introduce what the Good Vibes generator does
+* **GoodVibeCard**, which sends the good vibes
 
 which both are sent via the `sendGoodVibesToConversation` Azure function.
 
@@ -52,7 +57,7 @@ Adaptive Cards make it super easy to have a nice looking message in Teams while 
 
 ## make it deployable
 
-As we believe, that really everyone deserves good vibes, this is an open-source project - which you can deploy into your tenant. If interested, head over to our [deployment guide](https://github.com/working-on-it/good-vibes-generator/docs/deploymentGuide.md). We provide you with instructions and all files you need.
+As we believe, that really everyone deserves good vibes, this is an open-source project - which you can deploy into your tenant. If interested, head over to our [Deployment Guide](https://github.com/working-on-it/good-vibes-generator/docs/deploymentGuide.md). We provide you with instructions and all files you need.
 
 ### ARM template, but as 💪
 
@@ -68,7 +73,10 @@ The PowerShell script will prompt you to provide your preferred Azure region and
 
 ## resources
 
-- [Good Vibes generator](https://github.com/working-on-it/good-vibes-generator)
-- [Adaptive Cards](https://adaptivecards.io)
-- [What are managed identities for Azure resources?](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview)
-- [What is Bicep?](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep)
+* [Good Vibes generator](https://github.com/working-on-it/good-vibes-generator)
+* [Welcome to Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction)
+* [Adaptive Cards](https://adaptivecards.io)
+* [What are managed identities for Azure resources?](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)
+* [What is Bicep?](https://docs.microsoft.com/azure/azure-resource-manager/bicep/overview?tabs=bicep)
+* [Quickstart: Create a TypeScript function in Azure from the command line](https://docs.microsoft.com/azure/azure-functions/create-first-function-cli-typescript?tabs=azure-cli%2Cbrowser)
+* [How to install the Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)
