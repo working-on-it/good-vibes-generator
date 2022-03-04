@@ -4,6 +4,8 @@
 
 ## Idea
 
+### A Microsoft Teams bot
+
 We want Good Vibes. The world is a tough place to be and we all can use some positive affirmations and a little pep talk. Wouldn't it be awesome if these get straight into Microsoft Teams?
 
 ![good vibes chat](media/ExampleTeamsConversation.png)
@@ -86,7 +88,7 @@ Once the deployment in Azure has completed, the other step is to upload the app 
 
 ### Deployment script
 
-The included PowerShell script will prompt you to provide your preferred Azure region, your subscription ID and a resource prefix name. It will then deploy the bicep file and app package into your tenant. We've written the script with it being run from Azure Shell, so no modules on your local machine are required.
+The included PowerShell script will prompt you to provide your preferred Azure region, your subscription ID and a resource prefix name. It will then deploy the bicep file and app package into your tenant. We've written the script with it being run from Azure Cloud Shell, so no modules on your local machine are required.
 
 ## Conclusion
 
