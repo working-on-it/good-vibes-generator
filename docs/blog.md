@@ -42,22 +42,28 @@ In our solution, we unfortunately need both, as there is some inconsistencies wi
 
 ### Key Vault
 
-Although our aim is to be secret-less with Managed Identities for authentication, we still need to hold some information that we would prefer not stored in plain text. For example, the tenant ID. This is where Key Vault comes in to store these. However, we are also using a Managed Identity to access Key Vault, which satisfies our goal of being secret-less.
+Although our aim is to be secret-less with Managed Identities for authentication, we still need to hold some information that we would prefer not stored in plain text. For example, the Cosmos DB URI. This is where Key Vault comes in to store these. However, we are also using a Managed Identity to access Key Vault, which satisfies our goal of being secret-less.
 
 ### Cosmos DB
 
-Using Cosmos DB to store all phrases so that they can be picked up by the Azure Function was a logical choice, as Cosmos is cheap, serverless, schema-less and easy to use.
+We use Cosmos DB to store all phrases and conversation references so that they can be picked up by the Azure Function and know what to say to whom. This was a logical choice, as Cosmos is cheap, serverless, schema-less and easy to use.
 
 ### Azure Functions
 
-Azure Functions are used to run the application logic. This comprises of two main tasks:
+Azure Functions are used to run the application logic. There are 6 function that make up the app:
 
-* Respond to someone messaging the bot with a Good Vibe
-* Automatically send out Good Vibes on a schedule
+* messages - A listener for the bot. It responds to someone messaging the bot with a Good Vibe and also a welcome message on first run
+* sendGoodVibes - A timer based trigger function that starts the `goodVibesOrchestrator` function
+* goodVibesOrchestrator - An orchestrator function that handles the sending of good vibes to users
+* getConversations - An activity function that retrieves all previous conversation references with the bot
+* getGoodVibe - An activity function that generates a Good Vibe for each conversation reference
+* sendGoodVibeToConversation - An activity function that sends a Good Vibe to an individual conversation reference
+
+> A conversation reference is a description of a conversation between a Teams user and a bot. It is used for sending a message to a user pro-actively
 
 ### Storage Account
 
-A Storage Account is required to allow the (durable) Azure Functions to run correctly. In addition, the app package that the Azure Functions runs from is stored in the Storage Account.
+A Storage Account is required to allow the (durable) Azure Functions to run correctly. In addition, the zipped function app package that the Azure Functions runs from is stored in the Storage Account.
 
 ### Bot
 
@@ -84,11 +90,15 @@ We don't want you to give you a lengthy README file which guides you to click yo
 
 ### Zip file
 
-Once the deployment in Azure has completed, the other step is to upload the app package in to Azure Functions. The app package is a pre-built package with the code transpiled and all dependencies installed. This helps speed up cold start times in Azure Functions.
+Once the deployment in Azure has completed, the other step is to upload the zipped function app package in to Azure Functions. The zipped function app package is a pre-built package with the code transpiled and all dependencies installed. This helps speed up cold start times in Azure Functions.
 
 ### Deployment script
 
-The included PowerShell script will prompt you to provide your preferred Azure region, your subscription ID and a resource prefix name. It will then deploy the bicep file and app package into your tenant. We've written the script with it being run from Azure Cloud Shell, so no modules on your local machine are required.
+The included PowerShell script will prompt you to provide your preferred Azure region, your subscription ID and a resource prefix name. It will then deploy the bicep file and zipped function app package into your tenant. We've written the script for it to be run from Azure Cloud Shell, so no modules on your local machine are required.
+
+### Teams app package
+
+We have provided a Teams app package template allowing you to install the app as a personal app in Teams.
 
 ## Conclusion
 

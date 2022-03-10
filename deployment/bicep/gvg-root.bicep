@@ -365,6 +365,10 @@ resource functionApp 'Microsoft.Web/sites@2021-03-01' = {
           value: '@Microsoft.KeyVault(VaultName=${keyVault.name};SecretName=${keyVault::cosmosDbUriSecret.name})'
         }
         {
+          name: 'GoodVibesSchedule'
+          value: '0 0 13 * * *'
+        }
+        {
           name: 'FUNCTIONS_WORKER_RUNTIME'
           value: 'node'
         }

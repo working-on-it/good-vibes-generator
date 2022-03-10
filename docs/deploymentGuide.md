@@ -26,14 +26,26 @@ It's a good idea to first familiarize yourself with the resources:
 
 The script will now deploy all resources in your tenant. You can check in the Azure portal after you see the **Deployment completed** message.
 
-To add Good Vibes to Teams,
+To add Good Vibes to Teams:
 
-* Go to your **Good Vibes** resource group (default is **GoodVibesGenerator**)
-* Select the **_*_-bot** resource
-* Select **Channels**
-* Select the **Open in Teams** link.
+1. Go to the [Azure portal](https://portal.azure.com)
+2. Locate the resource group that was created during deployment
+3. Find the **Azure bot** (ends in -bot) that was created inside the resource group and under **Configuration** copy the **Microsoft App ID**
+   ![example bot id](media/BotID.png)
+4. Download the [latest release](https://github.com/working-on-it/good-vibes-generator/releases/latest/download/good-vibes-generator.zip) on your machine
+5. Extract the `good-vibes-generator.zip` file
+6. Open the extracted folder and go to the `teamsAppPackage` folder
+7. Open `manifest.json` and change **botId** from `<<botIdHere>>` to the **Microsoft App ID** from the Azure portal
+8. Zip up the 3 files inside of the `teamsAppPackage` folder
+9. Go to the [Teams admin center](https://admin.teams.microsoft.com)
+10. Under **Manage Apps**, select **Upload** and choose the zip file you created
+   ![teams manage app](media/TeamsAdmin1.png)
+11. The **Good Vibes** app should now be available in the list
+   ![good vibes app teams admin](media/TeamsAdmin2.png)
 
-## Change good vibes
+## Configuration
+
+### Change good vibes
 
 If you want to change some phrases, remove some or add new one, this can be done in the `config` container in Cosmos in Item **0**.  You will find 4 arrays that hold all phrases that make the good vibes. Feel free to share your additions with us 💖.
 
@@ -45,3 +57,9 @@ If you want to change some phrases, remove some or add new one, this can be done
 > * Phrase 4 - End the vibe e.g. "and that's a fact." or "for reals."
 
 ![Cosmos DB container](media/CosmosDB-container.png)
+
+### Set a schedule
+
+The default behaviour is that Good Vibes are sent once a day at 12PM (UTC). If you wish to change this schedule, it can be changed by modifying the `GoodVibesSchedule` Application Setting of the Function App Configuration. This is an [NCRONTAB expression](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-timer?tabs=csharp#ncrontab-expressions) so it needs to follow that format. For example, to run at 9.30AM (UTC) Monday-Friday, you would set it to **0 30 9 * * 1-5**.
+
+![GoodVibesSchedule](media/GoodVibesSchedule.png)
