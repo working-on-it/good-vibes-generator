@@ -28,10 +28,20 @@ The script will now deploy all resources in your tenant. You can check in the Az
 
 To add Good Vibes to Teams:
 
-* Go to your **Good Vibes** resource group (default is **GoodVibesGenerator**)
-* Select the **_*_-bot** resource
-* Select **Channels**
-* Select the **Open in Teams** link.
+1. Go to the [Azure portal](https://portal.azure.com)
+2. Locate the resource group that was created during deployment
+3. Find the **Azure bot** (ends in -bot) that was created inside the resource group and under **Configuration** copy the **Microsoft App ID**
+   ![example bot id](media/BotID.png)
+4. Download the [latest release](https://github.com/working-on-it/good-vibes-generator/releases/latest/download/good-vibes-generator.zip) on your machine
+5. Extract the `good-vibes-generator.zip` file
+6. Open the extracted folder and go to the `teamsAppPackage` folder
+7. Open `manifest.json` and change **botId** from `<<botIdHere>>` to the **Microsoft App ID** from the Azure portal
+8. Zip up the 3 files inside of the `teamsAppPackage` folder
+9. Go to the [Teams admin center](https://admin.teams.microsoft.com)
+10. Under **Manage Apps**, select **Upload** and choose the zip file you created
+   ![teams manage app](media/TeamsAdmin1.png)
+11. The **Good Vibes** app should now be available in the list
+   ![good vibes app teams admin](media/TeamsAdmin2.png)
 
 ## Configuration
 
